@@ -51,20 +51,20 @@ public class DetailsSelection extends JFrame {
 //      }
 //    });
 
-    validate.addActionListener(new ActionListener() {
+	  validate.addActionListener(new ActionListener() {
 
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        home.setMeal(meal);
-        home.setVisible(true);
-        DetailsSelection.this.dispose();
-      }
-    });
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				home.setVisible(true);
+				DetailsSelection.this.dispose();
+			}
+		});
   }
 
   public void setHome(Home home) {
     this.home = home;
-    meal = home.getMeal();
-    home.setVisible(false);
+	Meal.getMeal().showItems();
+	home.setVisible(false);
+	//commandDetails.setText(Meal.getMeal().toString());
   }
 }
